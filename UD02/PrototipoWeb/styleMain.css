@@ -1,0 +1,27 @@
+@media (max-width:1080px) {
+  nav{
+    border: 2px solid black;
+  }
+  form input{
+    display: block;
+  }
+}
+
+a{
+  display: block;
+}
+body{
+  background-color: #7EACCC;
+}
+div,footer{
+  background-color: #377099;
+}
+article{
+  background-color: #C2FFF8;
+}
+nav{
+  background-color: #E86D6B;
+}
+h5{
+  background-color: #FFCCC2;
+}
