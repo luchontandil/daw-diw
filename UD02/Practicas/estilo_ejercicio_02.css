@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(211, 211, 211);
+  font-family: "Open Sans";
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  display: inline-block;
+  text-align: left;
+  margin: 1%;
+  margin-bottom: 30px;
+  width: 30%;
+}
+.navegacion:nth-child(1)::after {
+  content: ' Brexit';
+}
+
+.navegacion:nth-child(2)::before {
+  content: url('1x/outline_add_circle_outline_black_18dp.png');
+}
+
+.navegacion:nth-child(3)::before {
+  content: url('1x/baseline_shopping_cart_black_18dp.png');
+}
+
+.navegacion:nth-child(4)::before {
+  content: url('1x/baseline_grade_black_18dp.png');
+}
+
+.navegacion:nth-child(5)::before {
+  content: url('1x/baseline_picture_as_pdf_black_18dp.png');
+}
+
+.navegacion:nth-child(6)::before {
+  content: url('1x/outline_image_search_black_18dp.png');
+}
+
+.navegacion:nth-child(7)::before {
+  content: url('1x/baseline_security_black_18dp.png');
+}
