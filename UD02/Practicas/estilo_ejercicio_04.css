@@ -1,0 +1,55 @@
+*{
+  font-family: Grenze;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#nombre:target{
+  background-color: #ffd86b;
+}
+
+#nombre:valid:not(:placeholder-shown) {
+  background-color: #81f08c;
+}
+fieldset{
+  font-size: 20px;
+  border: 1px solid black;
+}
+fieldset div{
+  margin:20px;
+}
+#nombre:invalid {
+  background-color: #f09d81;
+}
+
+select {
+  border-radius: 10px;
+  background-color: rgb(221,221,221);
+}
+
+#puntosCordura:out-of-range {
+  background-color: #f09d81;
+}
+
+div input:nth-child(-n+1) {
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 8px;
+  border-radius: 10px;
+}
+input, #nombre:before{
+  background-color: rgb(255,220,138);
+}
+
+#dificultad:checked:after {
+  background: url("cthulhu.svg");
+  background-size: 100%;
+  display: inline-block;
+  position: fixed;
+  margin: 10px 0px 0px 20px;
+  width: 50px;
+  height: 50px;
+  content: "";
+}
