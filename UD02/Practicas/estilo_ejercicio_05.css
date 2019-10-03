@@ -1,0 +1,71 @@
+*:not(body) {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-family: Amatic SC;
+  font-weight: bold;
+}
+
+header {
+  background-color: rgb(243, 243, 243);
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+}
+
+.logo {
+  font-size: 30px;
+  color: black;
+}
+
+.modulo {
+  display: inline-block;
+  width: 30%;
+}
+
+ul li {
+  padding-top: 20px;
+  padding-left: 20px;
+  list-style: none;
+}
+
+article div:nth-child(even) {
+  background-color: rgb(243, 243, 243);
+}
+
+article {
+  font-size: 22px;
+}
+
+.activo:after {
+  background: url("cthulhu.svg");
+  background-size: 100%;
+  display: inline-block;
+  margin: 0px 0px 0px 40%;
+  width: 50px;
+  height: 50px;
+  content: "";
+}
+
+@media (min-width:700px) {
+  /* ordenador */
+  nav ul{
+    text-align: right;
+  }
+  li{
+    display: inline;
+  }
+  .activo:after {
+    background: url("cthulhu.svg");
+    background-size: 100%;
+    display: inline-block;
+    margin: 0px 0px 0px -50px;
+    width: 50px;
+    height: 50px;
+    content: "";
+    z-index: -10;
+  }
+
+}

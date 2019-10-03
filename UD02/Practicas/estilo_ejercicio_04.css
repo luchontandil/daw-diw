@@ -18,12 +18,14 @@ fieldset{
   border: 1px solid black;
 }
 fieldset div{
-  margin:20px;
+  margin:10px;
 }
 #nombre:invalid {
   background-color: #f09d81;
 }
-
+#nombre{
+  font-size: 15px;
+}
 select {
   border-radius: 10px;
   background-color: rgb(221,221,221);
