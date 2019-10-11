@@ -1,0 +1,45 @@
+/* Contenedor Main */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-gap: 10px;
+}
+
+/* Caja de Cthulhu */
+.item2 {
+  grid-column: span 3;
+}
+
+/* Numeros */
+.item:nth-child(odd) {
+  background-color: rgb(161, 161, 161);
+}
+
+/* Todos los Items */
+.item {
+  border: none;
+}
+
+/* El titulo */
+h1 {
+  text-align: center;
+}
+
+/* Aplicar sombra a los numeros y a su item hermano en Hover*/
+.item:nth-child(odd):hover, .item:nth-child(odd):hover+.item {
+  box-shadow: 5px 5px black;
+}
+
+/* Cthulhu Aproves icon */
+#SealOfApproval::after {
+  position: fixed;
+  bottom:-30px;
+  right:-30px;
+  background-image: url("cthulhu_approval.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 150px;
+  height: 150px;
+  content: "";
+  z-index: 5;
+}
