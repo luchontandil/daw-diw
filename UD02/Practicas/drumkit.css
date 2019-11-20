@@ -1,13 +1,12 @@
-:root {
-}
+:root {}
 
-body{
+body {
   margin: 0;
   height: 100vh;
   overflow: hidden;
 }
 
-#container{
+#container {
   display: flex;
   flex-direction: row;
   align-content: space-between;
@@ -18,8 +17,8 @@ body{
   background-size: cover;
 }
 
-.btn{
-  color:white;
+.btn {
+  color: white;
   text-align: center;
   font-size: 44px;
   text-shadow: 0 0 2px black;
@@ -32,17 +31,20 @@ body{
   transform: scale(1);
   transition: 0.3s;
 }
-span{
+
+span {
   font-size: 16px;
 }
-.btn:first-child{
+
+.btn:first-child {
   margin-left: 20%;
 }
-.btn:last-child{
+
+.btn:last-child {
   margin-right: 20%;
 }
 
-.pressed{
+.pressed {
   box-shadow: 0 0 3px rgb(245, 230, 66);
   border: 3px solid yellow;
   transform: scale(1.1);
