@@ -35,6 +35,10 @@ items {
   justify-content: center;
   align-content: center;
   align-items: center;
+
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
   /*
      * Fragmentos perdidos
      * ^(;,;)^
@@ -42,7 +46,6 @@ items {
 }
 
 item {
-
   /*
      * Fragmentos perdidos
      * ^(;,;)^
@@ -53,17 +56,22 @@ item {
 * CSS for body
 */
 button {
-  /*
-     * Fragmentos perdidos
-     * ^(;,;)^
-     */
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'OuroborosRegular';
+  font-size: 25px;
+  text-decoration: none;
+  background: linear-gradient(#e66465, #9198e5);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 
 button:hover {
-  /*
-     * Fragmentos perdidos
-     * ^(;,;)^
-     */
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  transition: all 0.4s ease 0s;
 }
 
 button:active {
@@ -81,12 +89,10 @@ button:active {
 *   GUI.
 */
 steps {
-    width: 80vw;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 10px;
-
-    background-color: red;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 10px;
   /*
      * Fragmentos perdidos
      * ^(;,;)^
@@ -121,6 +127,7 @@ steps * {
 */
 progress {
   width: 80%;
+  height: 5vh;
   /*
      * Fragmentos perdidos
      * ^(;,;)^
@@ -128,7 +135,6 @@ progress {
 }
 
 finalmsg {
-
   /*
      * Fragmentos perdidos
      * ^(;,;)^
@@ -142,7 +148,17 @@ finalmsg {
      */
 }
 
-steplabel{
+steplabel {
   text-align: left;
   width: 100%;
+}
+
+
+steplabel , progress, finalmsg{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.transitioned{
+  opacity: 1;
 }

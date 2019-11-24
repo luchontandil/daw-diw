@@ -7,25 +7,39 @@ email : <berlanas_ang@gva.es>
 
 */
 
-/*
 
-FUNCIONES PERDIDAS
-^(;,;)^
+let i = 0;
 
-*/
-
-function startMigration(){
-
-    // Fragmentos perdidos
-    // ^(;,;)^
+function avanzarBarra(item) {
+  item.value = "100";
 }
 
-function init(){
-    console.info(" * Init envirnoment ");
+function startMigration() {
+  const items = document.querySelectorAll('steps *:not(span)');
 
-    // Set click function on button
-    document.querySelector("button").addEventListener("click",startMigration);
+  while (i < items.length - 1) {
+    items[i].addEventListener('transitionend', verSiguente);
+    i++
+  };
+
+  i = -1;
+
+  function verSiguente() {
+    i++;
+    if ((i + 2) % 3 == 0) {
+      avanzarBarra(items[i]);
+    }
+    return items[i + 1].classList.add('transitioned');
+  }
+
+  document.querySelector('steplabel').classList.add("transitioned");
+}
+
+function init() {
+  console.info(" * Init envirnoment ");
+  // Set click function on button
+  document.querySelector("button").addEventListener("click", startMigration);
 }
 
 // Init the environment when all is ready
-window.onload=init;
+window.onload = init;
