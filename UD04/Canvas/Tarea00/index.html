@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplos Básicos CANVAS - 01</title>
+    <link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+    <header>
+        <h1> Tablero de Ajedrez</h1>
+    </header>
+
+    <main>
+        <canvas width="400" height="400">
+        </canvas>
+    </main>
+
+    <script>
+
+        const canvas = document.querySelector("canvas");
+        const width = canvas.getAttribute('width');
+        const height = canvas.getAttribute('height');
+
+        let ctx = canvas.getContext("2d");
+
+        color1 = "white";
+        color2 = "black";
+        color = color1;
+        for (var i = 0; i < height; i+=height/8) {
+          for (var j = 0; j <= width; j+=width/8) {
+              ctx.fillStyle=color;
+              ctx.fillRect(i,j,width/8,height/8);
+              if (color == color1) color = color2;
+              else color = color1;
+          }
+        }
+
+    </script>
+</body>
+</html>
