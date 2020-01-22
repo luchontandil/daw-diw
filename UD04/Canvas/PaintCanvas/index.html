@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplos Básicos CANVAS - 01</title>
+    <link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+    <header>
+        <h1> Ejemplos de Canvas Básico - 01</h1>
+    </header>
+
+    <main>
+        <canvas width="400" height="400">
+        </canvas>
+        <button id="borrar" type="button" name="button">Borrar todo</button>
+        <button id="guardar" type="button" name="button">Guardar</button>
+        <a id="link"></a>
+    </main>
+
+    <script>
+        let xOld,yOld;
+        let isMouseDown = false;
+        const canvas = document.querySelector("canvas");
+        const width = canvas.getAttribute('width');
+        const height = canvas.getAttribute('height');
+
+        canvas.addEventListener('mousedown', click);
+        canvas.addEventListener('mouseup', click);
+        canvas.addEventListener('mousemove', pintar);
+
+        document.querySelector('#borrar').addEventListener('click',borrarTodo);
+        document.querySelector('#guardar').addEventListener('click',guardar);
+
+        // contexto -> ctx
+        let ctx = canvas.getContext("2d");
+
+        //ctx.fillRect(10,10,100,200);
+        // ctx.strokeStyle="purple";
+        // ctx.lineWidth=1;
+        //ctx.strokeRect(10,10,100,200);
+
+        // ctx.beginPath();
+        // ctx.moveTo(100,100);
+        // ctx.lineTo(50,50);
+        // ctx.lineTo(50,100);
+        // ctx.lineTo(100,100);
+        // //ctx.fill();
+        // ctx.stroke();
+        //
+        // ctx.clearRect(0,0,canvas.width,canvas.height);
+        //
+        // // ctx.moveTo(0,0);
+        //
+        // color1 = "white";
+        // color2 = "black";
+        // color = color1;
+        // for (var i = 0; i < height; i+=height/8) {
+        //   for (var j = 0; j <= width; j+=width/8) {
+        //       ctx.fillStyle=color;
+        //       ctx.fillRect(i,j,width/8,height/8);
+        //       if (color == color1) color = color2;
+        //       else color = color1;
+        //   }
+        // }
+        // ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+
+        function pintar() {
+          var position = canvas.getBoundingClientRect();
+          var x = event.clientX - position.left;
+          var y = event.clientY - position.top;
+
+          if (isMouseDown) {
+            console.log("X coords: " + x + ", Y coords: " + y);
+            ctx.strokeStyle="green";
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.beginPath();
+            ctx.moveTo(xOld,yOld);
+            ctx.lineTo(x,y);
+            ctx.stroke();
+            [xOld,yOld] = [x,y];
+            ctx.closePath();
+          }
+
+        }
+
+        function borrarTodo() {
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+        }
+
+        function click() {
+          var position = canvas.getBoundingClientRect();
+          var x = event.clientX - position.left;
+          var y = event.clientY - position.top;
+          isMouseDown=!isMouseDown;
+          if (isMouseDown) {[xOld,yOld] = [x,y];}
+        }
+        function guardar() {
+          // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+          // window.location.href=image; // it will save locally
+          var link = document.getElementById('link');
+          link.setAttribute('download', 'MintyPaper.png');
+          link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+          link.click();
+        }
+
+        // control, destino
+        //ctx.quadraticCurveTo(100,100,200,0);
+        //ctx.bezierCurveTo(100,100,70,70,200,0);
+
+        // ctx.beginPath();
+
+        //ctx.arc(200,200,50,0.2,1 * Math.PI);
+
+
+
+        // ctx.stroke();
+
+        // const dioses = [
+        // {nombre:"Cthulhu",poder:1000,color:"green"},
+        // {nombre:"Nyarlatothep",poder:600,color:"red"},
+        // {nombre:"Azazoth",poder:1400,color:"grey"},
+        // {nombre:"Pepe",poder:800,color:"purple"}
+        // ];
+
+        //let anguloActual = -0.5 * Math.PI;
+
+    </script>
+</body>
+</html>
