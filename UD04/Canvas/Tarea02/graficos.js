@@ -45,6 +45,7 @@ function circular() {
       var x = width/2 + (labelRadius) * Math.cos(midAngle);
       var y = height/2 + (labelRadius) * Math.sin(midAngle);
 
+      //Centro del texto
       ctx.translate(x,y);
       if(midAngle>0.5*Math.PI) midAngle-=(Math.PI);
       ctx.rotate(midAngle);
