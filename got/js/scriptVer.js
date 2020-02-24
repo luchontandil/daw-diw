@@ -20,7 +20,7 @@ function verPersonajes() {
   personajes.forEach(personaje => {
     container.innerHTML += `
     <div style="clear:both">
-    <div class="foto"> <img src="${personaje.imagen}"></img></div>
+      <div class="foto"> <img src="${personaje.imagen}"></img></div>
       <div class="datos">
         <div class="small cabecera">Nombre</div>
         <div class="medium cabecera">Apellidos</div>
